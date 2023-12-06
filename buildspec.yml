@@ -3,17 +3,19 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 18
-    commands:
-      - echo installing nodeJS version 20...
+      commands:
+        #echo installing nodeJS & npm
+        - curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+        #install nodejs & npm
+        - apt-get install -y nodejs
   pre_build:
     commands:
-      - echo installing dependencies...
+      #install the react/NodeJS dependencies
       - npm install
   build:
     commands:
-      - echo building the app...
-      - npm run build
+      #transform reactJS code to static html/js/css
+      - npm run build 
 artifacts:
   files:
     - "**/*"

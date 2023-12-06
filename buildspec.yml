@@ -4,10 +4,8 @@ phases:
   install:
     runtime-versions:
       commands:
-        #echo installing nodeJS & npm
-        - curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-        #install nodejs & npm
-        - apt-get install -y nodejs
+      sudo yum install https://rpm.nodesource.com/pub_18.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+      sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
   pre_build:
     commands:
       #install the react/NodeJS dependencies

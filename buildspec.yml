@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       commands:
         #echo installing nodeJS & npm
-        - curl -fsSL https://deb.nodesource.com/setup_16.x | bash
+        - curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
         #install nodejs & npm
         - apt-get install -y nodejs
   pre_build:

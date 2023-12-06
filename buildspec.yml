@@ -4,10 +4,10 @@ phases:
   install:
     runtime-versions:
       commands:
-        #echo installing nodeJS & npm
-        - curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-        #install nodejs & npm
-        - apt-get install -y nodejs
+      curl -SLO https://deb.nodesource.com/nsolid_setup_deb.sh
+      chmod 500 nsolid_setup_deb.sh
+      ./nsolid_setup_deb.sh 18
+      apt-get install nodejs -y
   pre_build:
     commands:
       #install the react/NodeJS dependencies

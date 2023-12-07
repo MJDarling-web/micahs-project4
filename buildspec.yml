@@ -1,20 +1,19 @@
 version: 0.2
-
+​
 phases:
   install:
     runtime-versions:
-      commands:
-      #download nodeJS & npm
-      yum install https://rpm.nodesource.com/pub_21.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-      yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+      nodejs: 18
+    commands:
+      - echo installing nodeJS version 20...
   pre_build:
     commands:
-      #install the react/NodeJS dependencies
+      - echo installing dependencies...
       - npm install
   build:
     commands:
-      #transform reactJS code to static html/js/css
-      - npm run build 
+      - echo building the app...
+      - npm run build
 artifacts:
   files:
     - "**/*"
